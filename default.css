@@ -4,6 +4,9 @@
 	--borderColor: #C1C1C1;
 	--mainText:black;
 	--secondaryText:#4b5156;
+	--themeDotBorder: #24292e;
+	--previewBg: rgb(251,249,243,0.8);
+	--previewShadow: #f0EAD6;
 }
 
 html, body {
@@ -126,10 +129,120 @@ p, li, span, label, input, textarea{
 
 .left-column{
 	grid-area: left-column;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
+
+#profile_pic{
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+	border: 2px solid var(--borderColor);
+}
+
+#theme-options-wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.option-dot{
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	webkit-box-shadow: 10px 1px 8px -4px rgba(0,0,0,0.56); 
+   	box-shadow: 10px 1px 8px -4px rgba(0,0,0,0.56);
+   	background-color: black;
+   	cursor: pointer;
+   	margin: 5px;
+   	border: 2px solid var(--themeDotBorder);
+
+}
+
+.option-dot:hover{
+	border-width: 5px;
+}
+
+#light-mode{
+	background-color: #fff;
+}
+
+#blue-mode{
+	background-color: #192734;
+}
+
+#green-mode{
+	background-color: #78866B;
+}
+
+#purple-mode{
+	background-color: #7E4C74;
+}
+
+#setting-note{
+	font-size: 12px;
+	font-style: italic;
+	text-align: center;
+}
+
+
 .right-column{
 	grid-area: right-column;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	display: grid;
+	align-content: center;
+
 }
+
+#preview{
+	width: 300px;
+	border: 1.5px solid #17A2B8;
+	background-color: var(--previewBg);
+	padding: 15px;
+	position: relative;
+}
+
+#preview-shadow{
+	background-color: var(--previewShadow);
+	width: 300px;
+	height: 245px;
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+.corner{
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	border:1.5px solid #17A2B8 ;
+	background-color: #fff;
+	position: absolute;
+}
+
+#corner-tl{
+	top: -5px;
+	left: -5px;
+}
+
+#corner-tr{
+	top: -5px;
+	right: -5px;
+}
+
+#corner-dl{
+	bottom: -5px;
+	left: -5px;
+}
+
+#corner-dr{
+	bottom: -5px;
+	right: -5px;
+}
+
+
 
 
 @media screen and (max-width: 1200px){
@@ -138,3 +251,16 @@ p, li, span, label, input, textarea{
 	}
 }
 
+@media screen and (max-width: 1000px){
+
+	.intro-wrapper{
+
+	grid-template-columns: 1fr ;
+	grid-template-areas: 
+	'nav-wrapper'
+	'left-column' 
+	'right-column'
+	;
+}
+
+}
