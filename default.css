@@ -191,7 +191,6 @@ p, li, span, label, input, textarea{
 	grid-area: right-column;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	padding-left: 50px;
 	display: grid;
 	align-content: center;
 
@@ -262,5 +261,8 @@ p, li, span, label, input, textarea{
 	'right-column'
 	;
 }
+	.right-column{
+		justify-content: center;
+	}
 
 }
